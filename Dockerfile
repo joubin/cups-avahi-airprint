@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 # Install the packages we need. Avahi will be included
-RUN set -e
+
 RUN echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories &&\
 	apk add --update cups \
 	cups-libs \

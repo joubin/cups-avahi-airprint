@@ -1,6 +1,7 @@
 FROM alpine:latest
 
 # Install the packages we need. Avahi will be included
+RUN set -e
 RUN echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories &&\
 	apk add --update cups \
 	cups-libs \
@@ -17,9 +18,9 @@ RUN echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositorie
 	build-base \
 	wget \
 	rsync \
-	&& pip --no-cache-dir install --upgrade pip \
-	&& pip install pycups \
-	&& rm -rf /var/cache/apk/*
+RUN pip --no-cache-dir install --upgrade pip \
+RUN pip install pycups \
+RUN rm -rf /var/cache/apk/*
 
 # This will use port 631
 EXPOSE 631

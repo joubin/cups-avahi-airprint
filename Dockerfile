@@ -17,7 +17,7 @@ RUN echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositorie
 	py-pip \
 	build-base \
 	wget \
-	rsync \
+	rsync
 RUN pip --no-cache-dir install --upgrade pip \
 RUN pip install pycups \
 RUN rm -rf /var/cache/apk/*
